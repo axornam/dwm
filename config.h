@@ -6,21 +6,22 @@ static const unsigned int snap = 16;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {
-    "FiraCode Nerd Font:style=regular:size=10:antialias=true",
+    "FiraCode Nerd Font:style=medium:size=10:antialias=true",
     "monospace:size=10"};
 // static const char dmenufont[]       = "monospace:size=10";
 static const char dmenufont[] =
-    "FiraCode Nerd Font:style=regular:size=10:antialias=true";
-static const char col_gray1[] = "#222222";
-static const char col_gray2[] = "#444444";
-static const char col_gray3[] = "#bbbbbb";
-static const char col_gray4[] = "#eeeeee";
-static const char col_cyan[] = "#ff0000";
-// static const char col_cyan[]        = "#005577";
+    "FiraCode Nerd Font:style=medium:size=10:antialias=true";
+static const char col_gray1[] = "#0a0a0a";
+// static const char col_gray1[] = "#282828";
+static const char col_gray2[] = "#665c54";
+static const char col_gray3[] = "#404040";
+static const char col_gray4[] = "#3d3d3d";
+// static const char col_gray5[] = "#f3f3f3";
+static const char col_gray5[] = "#b8b9b4";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
-    [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, col_cyan},
+    [SchemeNorm] = {col_gray5, col_gray1, col_gray2},
+    [SchemeSel] = {col_gray1, col_gray5, col_gray5},
 };
 
 /* tagging */
@@ -70,8 +71,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
-    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
+    "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", col_gray1, "-nf",
+    col_gray3,   "-sb", col_gray5, "-sf", col_gray4, NULL};
 static const char *jgmenucmd[] = {"jgmenu_run"};
 static const char *termcmd[] = {"kitty", NULL};
 static const char *lockcmd[] = {"bl-lock", NULL};
