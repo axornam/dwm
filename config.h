@@ -78,6 +78,12 @@ static const char *termcmd[] = {"kitty", NULL};
 static const char *lockcmd[] = {"bl-lock", NULL};
 static const char *brightness_plus_cmd[] = {"brightnessctl", "set", "6.25%+"};
 static const char *brightness_minus_cmd[] = {"brightnessctl", "set", "6.25%-"};
+static const char *volume_plus_cmd[] = {"amixer", "-D",     "pulse",
+                                        "sset",   "Master", "5%+"};
+static const char *volume_minus_cmd[] = {"amixer", "-D",     "pulse",
+                                         "sset",   "Master", "5%-"};
+static const char *volume_toggle_cmd[] = {"amixer", "-D",     "pulse",
+                                          "sset",   "Master", "toggle"};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -86,6 +92,9 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_p, spawn, {.v = jgmenucmd}},
     {MODKEY | ControlMask, XK_Up, spawn, {.v = brightness_plus_cmd}},
     {MODKEY | ControlMask, XK_Down, spawn, {.v = brightness_minus_cmd}},
+    {MODKEY | ShiftMask, XK_Up, spawn, {.v = volume_plus_cmd}},
+    {MODKEY | ShiftMask, XK_Down, spawn, {.v = volume_minus_cmd}},
+    {MODKEY | ShiftMask, XK_m, spawn, {.v = volume_toggle_cmd}},
     /* Custom Keys End Here */
 
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
