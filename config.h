@@ -76,8 +76,8 @@ static const char *dmenucmd[] = {
 static const char *jgmenucmd[] = {"jgmenu_run"};
 static const char *termcmd[] = {"kitty", NULL};
 static const char *lockcmd[] = {"bl-lock", NULL};
-static const char *brightness_plus_cmd[] = {"brightnessctl", "set", "6.25%+"};
-static const char *brightness_minus_cmd[] = {"brightnessctl", "set", "6.25%-"};
+static const char *brightness_plus_cmd[] = {"brightnessctl", "set", "1.0%+"};
+static const char *brightness_minus_cmd[] = {"brightnessctl", "set", "1.0%-"};
 static const char *volume_plus_cmd[] = {"amixer", "-D",     "pulse",
                                         "sset",   "Master", "5%+"};
 static const char *volume_minus_cmd[] = {"amixer", "-D",     "pulse",
